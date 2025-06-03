@@ -1,0 +1,31 @@
+react is a library and creates single page application
+
+
+react doesn't have state managagement and hence we take help of other libriaries like redux, redux toolkit,context API
+
+to navigate between pages we use the package react-router (react doesn't have router) 
+
+BAAS apps - backend as a service
+
+vite and parcel are bundler
+bundler take all the project file and combines them into one file to run in browser.
+
+react -> react-dom (usualyy for websites)
+      -> react-native(usually for mobile apps)
+
+
+2 ways to cretae a react project:
+one is thru npx create-react-app react-app
+npm start
+much slower than with implementation of vite 
+
+
+and the other way is using vite
+npm create vite@latest my-app --template react
+cd my-app
+npm install
+npm run dev
+
+we mainly work with the src folder 
+the package.json allows us to kno various dependecies required 
+
