@@ -19,9 +19,13 @@ function App() {
  
   //actual chagne od them
   useEffect(() => {
-    document.querySelector('html').classList.remove("light", "dark")
-    document.querySelector('html').classList.add(thememode)
-  }, [thememode])
+  if (thememode === "dark") {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+}, [thememode]);
+
 
   return (
     <>
