@@ -15,7 +15,7 @@ export class Service{
         this.bucket = new Storage(this.client);
     }
 
-    async createPost({title, slug, content, images, status, userId}){
+    async createPost({title, slug, content, images, status, userid}){
         try {
             return await this.databases.createDocument(
                 conf.appwriteDatabase,
@@ -26,7 +26,7 @@ export class Service{
                     content,
                     images,
                     status,
-                    userId,
+                    userid,
                 }
             )
         } catch (error) {
@@ -82,7 +82,7 @@ export class Service{
         }
     }
 
-    async getPosts(queries = [Query.equal("status", "active")]){
+    async getPosts(queries = []){
         try {
             return await this.databases.listDocuments(
                 conf.appwriteDatabase,
@@ -125,12 +125,15 @@ export class Service{
         }
     }
 
-    getFilePreview(fileId){
-        return this.bucket.getFilePreview(
+    getFileView(fileId, width = 400, height = 300){
+        return this.bucket.getFileView(
             conf.appwriteBucket,
-            fileId
+            fileId,
+            width,
+            height
         )
     }
+
 }
 
 
