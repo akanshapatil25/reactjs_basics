@@ -29,3 +29,6 @@ npm run dev
 we mainly work with the src folder 
 the package.json allows us to kno various dependecies required 
 
+
+virtual dom
+not used now but used in older verseions
